@@ -1,7 +1,21 @@
 const curDate = document.getElementById("date");
 const weather = document.getElementById("weather_cond");
 
-const tempStatus = "Clouds";
+const tempStatus = "{%tempstas%}";
+
+if(tempStatus === "Sunny")
+{
+    weather_cond.innerHTML = "<i class='fas fa-sun' style='color: #eccc68'></i>";
+}
+else if(tempStatus === "Clouds")
+{
+    weather_cond.innerHTML = "<i class='fas fa-cloud' style='color: #dfe4ea'></i>";
+}
+else if(tempStatus === "Rainy")
+{
+    weather_cond.innerHTML = "<i class='fas fa-rain' style='color: #44c3de'></i>";
+}
+
 
 const getCurrentDay = () => {
     var weekday = [];
