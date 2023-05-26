@@ -38,15 +38,15 @@ const getCurrentTime = () => {
     var months = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
 
 
-    var now = new Date();
-    var month = months[now.getMonth()];
+    let now = new Date();
+    let month = months[now.getMonth()];
     // console.log(month);
-    var date = now.getDate();
+    let date = now.getDate();
 
-    var hour = now.getHours();
-    var mins = now.getMinutes();
+    let hour = now.getHours();
+    let mins = now.getMinutes();
 
-    var period = "AM";
+    let period = "AM";
     if(hour >= 12)
     {
         period = "PM";
