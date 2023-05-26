@@ -18,7 +18,7 @@ else if(tempStatus === "Rainy")
 
 
 const getCurrentDay = () => {
-    var weekday = [];
+    let weekday = [];
     weekday[0] = "Mon";
     weekday[1] = "Tue";
     weekday[2] = "Wed";
@@ -35,7 +35,7 @@ const getCurrentDay = () => {
 
 const getCurrentTime = () => {
 
-    var months = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+    const months = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
 
 
     let now = new Date();

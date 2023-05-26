@@ -3,10 +3,10 @@ const fs = require("fs");
 const requests = require("requests");
 
 
-var file = fs.readFileSync("index.html","utf-8");
+const file = fs.readFileSync("index.html","utf-8");
 
 const replaceVal = (tempVal, orgVal) => {
-    var temperature = tempVal.replace("{%tempval%}",(Math.round(orgVal.main.temp - 273) *10) /10);
+    let temperature = tempVal.replace("{%tempval%}",(Math.round(orgVal.main.temp - 273) *10) /10);
     temperature = temperature.replace("{%temp_minval%}",(Math.round(orgVal.main.temp_min - 273) *10) /10);
     temperature = temperature.replace("{%temp_maxval%}",(Math.round(orgVal.main.temp_max - 273) *10) /10);
     temperature = temperature.replace("{%country%}",orgVal.sys.country);
@@ -20,9 +20,9 @@ const server = http.createServer((req,res) => {
     {
         requests("https://api.openweathermap.org/data/2.5/weather?q=Pune&appid=8dd77d4bf0e53756137c50783356fa0f")
         .on("data", (chunkData) => {
-            var objData = JSON.parse(chunkData);
-            var arr = [objData];
-            var real = arr.map(val => replaceVal(file, val)).join("");
+            let objData = JSON.parse(chunkData);
+            let arr = [objData];
+            let real = arr.map(val => replaceVal(file, val)).join("");
             res.write(real);
             console.log(real);
         })
