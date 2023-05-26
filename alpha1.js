@@ -6,6 +6,7 @@ const requests = require("requests");
 const file = fs.readFileSync("index.html","utf-8");
 
 const replaceVal = (tempVal, orgVal) => {
+    /* eslint-disable no-eval */
     let temperature = tempVal.replace("{%tempval%}",(Math.round(orgVal.main.temp - 273) *10) /10);
     temperature = temperature.replace("{%temp_minval%}",(Math.round(orgVal.main.temp_min - 273) *10) /10);
     temperature = temperature.replace("{%temp_maxval%}",(Math.round(orgVal.main.temp_max - 273) *10) /10);
@@ -16,6 +17,7 @@ const replaceVal = (tempVal, orgVal) => {
 }
 
 const server = http.createServer((req,res) => {
+    /* eslint-disable no-eval */
     if(req.url === "/")
     {
         requests("https://api.openweathermap.org/data/2.5/weather?q=Pune&appid=8dd77d4bf0e53756137c50783356fa0f")
