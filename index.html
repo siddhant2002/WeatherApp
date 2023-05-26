@@ -5,13 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="./style.css"> -->
     <style>
         * {
             padding: 0;
@@ -243,14 +240,13 @@
         }
         else if (tempStatus === "Clouds") {
             weather.innerHTML = "<i class='fa-solid fa-cloud' style='color: #dfe4ea'></i>";
-        }
+        } 
         else if (tempStatus === "Rainy") {
             weather.innerHTML = "<i class='fa-solid fa-raindrops' style='color: #44c3de'></i>";
         }
-        else {
-            weather.innerHTML = "<i class='fa-solid fa-moon-stars' style='color: #44c3de'></i>";
+        else if(tempStatus === "Clear"){
+            weather.innerHTML = "<i class='fa-solid fa-moon-stars' style='color: #161718'></i>";
         }
-
         const getCurrentDay = () => {
             var weekday = [];
             weekday[0] = "Mon";
@@ -296,8 +292,7 @@
 
         curDate.innerHTML = getCurrentDay() + " | " + getCurrentTime();
 
-// getCurrentDay();
-// getCurrentTime();
+
     </script>
 </body>
 

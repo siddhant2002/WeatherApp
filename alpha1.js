@@ -15,7 +15,6 @@ const replaceVal = (tempVal, orgVal) => {
     return temperature;
 }
 
-console.log("hiIII")
 const server = http.createServer((req,res) => {
     if(req.url === "/")
     {
@@ -24,8 +23,8 @@ const server = http.createServer((req,res) => {
             var objData = JSON.parse(chunkData);
             var arr = [objData];
             var real = arr.map(val => replaceVal(file, val)).join("");
-            console.log(real);
             res.write(real);
+            console.log(real);
         })
         .on("end", (err) => {
             if(err)
@@ -37,4 +36,4 @@ const server = http.createServer((req,res) => {
     }
 });
 
-server.listen(7000,"127.0.0.1");
+server.listen(3000,"127.0.0.1");
