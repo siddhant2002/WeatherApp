@@ -2,7 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const requests = require("requests");
 
-
+// eslint-disable-line no-eval
 const file = fs.readFileSync("index.html","utf-8");
 
 const replaceVal = (tempVal, orgVal) => {
